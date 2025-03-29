@@ -121,6 +121,7 @@ input:focus, button:focus {
   pointer-events: none; 
 
 }
+
 @keyframes slideIn {
   0% {
     left: -10%;  }
