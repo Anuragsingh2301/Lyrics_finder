@@ -16,13 +16,14 @@ body{
 }
 
 .heading {
+  margin-left: 10px;
+  margin-right: 25px;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ffffff;
-  background: linear-gradient(90deg, #ffffff, #036860);
+   background: linear-gradient(90deg, #ffffff, #036860);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 15px 0;
@@ -34,7 +35,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 65px;
   height: 100px;
   padding: 10px;
   background-color: #1E1E1E;
@@ -55,28 +56,34 @@ input,button{
   cursor: pointer;
   
 }
-button{
-  background-color: #282626;
+.app-container .header button{
+  background-color: #242323;
   color: white;
 }
 
 
  
 
-button:hover{
+ .header button:hover{
   background-color: #5856564c ;
 
 }
 
+.foot button:hover{
+  background-color: #5856564c ;
+
+}
 input:focus, button:focus {
   outline: 2px solid white;
   background: none;
-  color: white;
+  color: black;
+  background-color: #ffffff;
 }
 
 
  
 .app-container {
+   
   display: flex;
   flex-direction: column;
   min-height: 100vh;  
@@ -108,7 +115,7 @@ input:focus, button:focus {
   width: 80%;
   line-height: 1.6;
   border: 1px solid #4A4A4A;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(104, 179, 183, 0.3);
 }
 
 .foot button {
@@ -127,13 +134,130 @@ input:focus, button:focus {
     left: -10%;  }
   100% {
     left: 0;  
-    pointer-events: auto; /* Enable click at the end */
+    pointer-events: auto;  
   }
 }
 
 .foot button:hover{
   
-  transform: scale(1.2) rotate(360deg);
+  transform: scale(1.2) rotate(10deg);
+}
+
+.heading-theme{
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 25px;
+  height: 100px;
+  padding: 10px;
+
+
 }
 
  
+.Toggle {
+  all: unset;
+  
+  width: 50px;
+  height: 25px;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition:  transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+
+}
+
+.Toggle::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #444;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+
+ /* .Toggle:hover{
+   transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+ } */
+ .Toggle:focus{
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); 
+ }
+
+/* light mode*/
+
+.app-container.light .heading-theme {
+  border-radius: 13px;
+  background-color: white !important;  
+  color: black !important;  
+}
+
+.app-container.light .Toggle{
+  background-color: #444;
+ }
+
+.app-container.light .Toggle::before{
+  background-color: #fff;
+     transform: translateX(25px);
+  } 
+
+.app-container.light .heading{
+   
+   background: linear-gradient(90deg, #a446a4, #158073);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.app-container.light .header input {
+  background-color: rgb(133, 186, 185) !important;
+  color: black !important;
+}
+
+.app-container.light .header button{
+  background-color: rgb(166, 160, 160) !important;
+  color: black !important;
+}
+
+.app-container.light .foot button{
+  background-color: rgb(166, 160, 160) !important;
+  color: black !important;
+}
+
+
+
+.app-container.light .header-cont{
+
+   border: 3.5px solid rgb(89, 139, 124);
+   border-radius: 15px;
+
+}
+
+.app-container.light .main {
+  background: linear-gradient(135deg, #E3F2FD, #F8F9FA);   
+  color: #212529 !important;   
+}
+
+
+.app-container.light .main pre {
+  background: linear-gradient(90deg, #15452e, #b20c54);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #212529 !important;  
+  border: 1px solid #90A4AE;   
+  box-shadow: 0px 4px 10px rgba(153, 27, 86, 0.3);
+
+
+}
+

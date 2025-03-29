@@ -8,11 +8,13 @@ function App() {
     const [Artist,setArtist]= useState("");
     const [Lyrics,setLyrics]=useState("");
     const [song,setsong]=useState("");
+    const [theme, setTheme] = useState("dark");
 
 
     function SearchLyrics(){
         if(Artist==="" || song===""){
-            alert("Please enter both song and artist");            return;
+            alert("Please enter both song and artist"); 
+            return;
         }
          
         axios
@@ -44,16 +46,24 @@ function App() {
         setLyrics("");
     }
 
+    function Toggletheme(){
+        setTheme(prevtheme=>{
+          return prevtheme==="dark"?"light":"dark"
+        })
+    }
 
 
 
 
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${theme}`}>
       {/* Header Section */}
       <div className="header-cont">
-        <h1 className="heading">Lyrics Finder</h1>
+        <div className="heading-theme">
+          <h1 className="heading">Lyrics Finder</h1>
+          <button className="Toggle" onClick={Toggletheme}></button>
+          </div>
 
         <div className="header">
           <input id="songInput" type="text" placeholder="Song" value={song} onChange={Handlesong}/>
