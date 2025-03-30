@@ -8,15 +8,18 @@ function App() {
     const [Artist,setArtist]= useState("");
     const [Lyrics,setLyrics]=useState("");
     const [song,setsong]=useState("");
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState((localStorage.getItem("theme")||"dark"));
 
+
+    useEffect(()=>{
+      localStorage.setItem("theme",theme);
+    },[theme]);
 
     function SearchLyrics(){
         if(Artist==="" || song===""){
             alert("Please enter both song and artist"); 
             return;
-        }
-         
+        } 
         axios
         .get(`https://api.lyrics.ovh/v1/${Artist.toLowerCase()}/${song.toLowerCase()}`)
         .then((res)=>{
@@ -50,6 +53,7 @@ function App() {
         setTheme(prevtheme=>{
           return prevtheme==="dark"?"light":"dark"
         })
+
     }
 
 
