@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "homepage": "https://Anuragsingh2301.github.io/Lyrics-Finder",
   "private": true,
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
 
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
