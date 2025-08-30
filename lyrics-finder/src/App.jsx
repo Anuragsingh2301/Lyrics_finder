@@ -20,19 +20,17 @@ function App() {
             alert("Please enter both song and artist"); 
             return;
         } 
-        axios
-        .get(`https://api.lyrics.ovh/v1/${Artist.toLowerCase()}/${song.toLowerCase()}`)
-        .then((res)=>{
-
-            setLyrics(res.data.lyrics)
-           document.getElementById("songInput").blur()  // Remove focus from Song input
-           document.getElementById("artistInput").blur()
-        })
-        .catch((err) => {
-            setLyrics("Lyrics not found. Try a different song!"); 
-            console.error("Error fetching lyrics:", err);
-        });
-
+      axios
+      .get(`https://api.lyrics.ovh/v1/${Artist}/${song}`)
+      .then((res) => {
+        setLyrics(res.data.lyrics);
+        document.getElementById("songInput").blur();
+        document.getElementById("artistInput").blur();
+      })
+      .catch((err) => {
+        setLyrics("Lyrics not found. Try a different song!");
+        console.error("Error fetching lyrics:", err);
+      });
     }
 
     function Handlesong (e){
