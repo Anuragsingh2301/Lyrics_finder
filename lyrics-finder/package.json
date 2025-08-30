@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://Anuragsingh2301.github.io/Lyrics-Finder",
   "private": true,
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -15,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
