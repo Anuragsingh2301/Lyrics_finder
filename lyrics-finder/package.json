@@ -1,9 +1,8 @@
 {
   "name": "lyrics-finder",
   "version": "0.1.0",
-  "homepage": "https://Anuragsingh2301.github.io/Lyrics-finder",
+  "homepage": "https://Anuragsingh2301.github.io/Lyrics_finder",
   "private": true,
-
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
